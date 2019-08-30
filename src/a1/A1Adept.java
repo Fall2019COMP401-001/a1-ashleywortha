@@ -41,7 +41,6 @@ public class A1Adept {
 			// stores total cost of items
 			double total = 0;
 			
-			//**SOMETHING IS WEIRD WITH HOW IT CALCULATES TOTALS
 			for(int k = 0; k < totalItems; k++) {
 				// read number of item x bought
 				int numberOfItems = scan.nextInt();
@@ -62,7 +61,7 @@ public class A1Adept {
 		// helper functions to find max, minimum, and average
 				int max = findValueMax(totalCost);
 				int min = findValueMin(totalCost);
-				double ave = findAverage(totalCost);
+				double ave = findAverage(totalCost, customerCount);
 				
 				
 		System.out.println("Biggest: " + first[max] + " " + last[max] + " " + "(" + String.format("%.2f",totalCost[max]) + ")");
@@ -90,12 +89,12 @@ public class A1Adept {
 		}
 		return min;
 	}
-	static double findAverage(double[] vals) {
+	static double findAverage(double[] vals, int num) {
 		double average = 0;
-		for (int i = 1; i < vals.length; i++) {
+		for (int i = 0; i < vals.length; i++) {
 			average += vals[i];
 		}
-		average = average/2;
+		average = average/num;
 		return average;
 	}
 }
