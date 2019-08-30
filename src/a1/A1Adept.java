@@ -72,9 +72,10 @@ public class A1Adept {
 	static int findValueMax (double[] vals) {
 		double curMax = vals[0];
 		int max = 0;
-		for (int i = 1; i < vals.length; i++) {
+		for (int i = 0; i < vals.length; i++) {
 			if (vals[i] > curMax) {
 				max = i;
+				curMax = vals[i];
 			}
 		}
 		return max;
@@ -82,9 +83,10 @@ public class A1Adept {
 	static int findValueMin(double[] vals) {
 		double curMin = vals[0];
 		int min = 0;
-		for (int i = 1; i < vals.length; i++) {
+		for (int i = 0; i < vals.length; i++) {
 			if (vals[i] < curMin) {
 				min = i;
+				curMin = vals[i];
 			}
 		}
 		return min;
