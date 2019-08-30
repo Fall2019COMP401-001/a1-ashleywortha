@@ -40,6 +40,7 @@ public class A1Jedi {
 					
 					// loop that scans the number of x item
 					// and scans the name of x item
+					int[] doubleCheck = new int[item.length];
 					for(int l = 0; l < itemsBought; l++) {
 						int numberOfItem = scan.nextInt();
 						String itemName = scan.next();
@@ -51,10 +52,11 @@ public class A1Jedi {
 						// array
 						for(int m = 0; m < item.length; m++) {
 						if (item[m].equals(itemName)) {
-							if(totalItem[m] < 1) {
+							totalItem[m] += numberOfItem;
+							doubleCheck[m] += 1;
+							if (doubleCheck[m] <= 1) {
 								totalCustomer[m] += 1;
 							}
-							totalItem[m] += numberOfItem;
 						} 
 					}
 				}
