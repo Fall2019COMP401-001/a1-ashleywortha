@@ -48,11 +48,13 @@ public class A1Jedi {
 						// item in the store and adds the number of
 						// the item bought to the total item array
 						// and adds the customer to the total customer
-						// array  **DOES NOT WORK
+						// array
 						for(int m = 0; m < item.length; m++) {
 						if (item[m].equals(itemName)) {
+							if(totalItem[m] < 1) {
+								totalCustomer[m] += 1;
+							}
 							totalItem[m] += numberOfItem;
-							totalCustomer[m] += 1;
 						} 
 					}
 				}
