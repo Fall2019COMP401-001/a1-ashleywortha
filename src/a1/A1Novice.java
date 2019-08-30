@@ -31,7 +31,7 @@ public class A1Novice {
 				   // name of item
 				   String itemName = scan.next();
 				   // cost of x item
-				   Float costOfItem = scan.nextFloat();
+				   double costOfItem = scan.nextDouble();
 				   total += numberOfItem * costOfItem;
 				   }	
 			totalCost[i] = total;
@@ -39,6 +39,9 @@ public class A1Novice {
 		     
 		// all input entered, so close scanner
 		scan.close();
+		
+		
+		
 		// print results looped in 
 		for (int j = 0; j < count; j++) {
 		System.out.println(name[j] + ". " + last[j]+ ": " + String.format("%.2f",totalCost[j]));
