@@ -16,12 +16,12 @@ public class A1Jedi {
 				String[] item = new String[itemCount];
 				double[] itemCost = new double[itemCount];
 				
-				//arrays that store the total number of items
+				// Arrays that store the total number of items
 				// and total number of customers who bought x item
 				int[] totalItem = new int[itemCount];
 				int[] totalCustomer = new int[itemCount];
 				
-				// loop that enters in the names and costs of the items
+				// enter in the names and costs of the items
 				for(int i = 0; i < itemCount; i++) {
 					item[i] = scan.next();
 					itemCost[i] = scan.nextDouble();
@@ -31,21 +31,19 @@ public class A1Jedi {
 				// read the number of customers
 				int customerCount = scan.nextInt();
 				
-				//loop that scans the name of customers
-				// and the number of items bought
+				// scan the name of customers and the number of items bought
 				for(int j = 0; j < customerCount; j++) {
 					String first = scan.next();
 					String last = scan.next();
 					int itemsBought = scan.nextInt();
 					
-					// loop that scans the number of x item
-					// and scans the name of x item
+					// scan the number of x item and the name of x item
 					int[] doubleCheck = new int[item.length];
 					for(int l = 0; l < itemsBought; l++) {
 						int numberOfItem = scan.nextInt();
 						String itemName = scan.next();
 						
-						// loop that searches for the name of the
+						// search for the name of the
 						// item in the store and adds the number of
 						// the item bought to the total item array
 						// and adds the customer to the total customer
@@ -62,8 +60,15 @@ public class A1Jedi {
 				}
 		
 	}
+				// all input entered, scanner closed
 				scan.close();
+				
+				// print data looped in by reading values in arrays
 				for(int n = 0; n < itemCount; n++) {
+					
+					// determines how statement is printed based on the number of customers
+					// that bought n item
+					
 					if (totalCustomer[n] < 1) {
 						System.out.println( "No customers bought " + item[n]);
 					} else {
